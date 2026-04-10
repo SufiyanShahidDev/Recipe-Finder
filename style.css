@@ -79,3 +79,116 @@ header {
 .search-bar button:hover {
     background: var(--rust-light);
 }
+
+/* MAIN */
+main {
+    padding: 36px 40px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+}
+
+h2 span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: .9rem;
+    color: var(--gray);
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+#recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/* RECIPE CARD */
+.recipe-card {
+    background: #fff9f3;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 36px rgba(60, 30, 10, .14);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.card-body p {
+    font-size: .82rem;
+    color: var(--gray);
+    margin-bottom: 4px;
+}
+
+.card-body p i {
+    color: var(--rust);
+    margin-right: 5px;
+}
+
+.card-footer-row {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center;
+    margin-top: 12px;
+}
+
+.publisher-tag {
+    font-size: .75rem;
+    background: #f0e6da;
+    color: var(--rust);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.view-btn {
+    background: var(--rust);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: .78rem;
+    cursor: pointer;
+}
+
+.view-btn:hover {
+    background: var(--rust-light);
+}
+
+.msg {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray);
+}
+
+.msg i {
+    font-size: 48px;
+    color: var(--rust-light);
+    display: block;
+    margin-bottom: 16px;
+}
+ */
