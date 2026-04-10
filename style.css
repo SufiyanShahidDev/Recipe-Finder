@@ -152,7 +152,7 @@ h2 span {
 .card-footer-row {
     display: flex;
     justify-content: space-between;
-    /* align-items: center;
+    align-items: center;
     margin-top: 12px;
 }
 
@@ -191,4 +191,4 @@ h2 span {
     display: block;
     margin-bottom: 16px;
 }
- */
+
