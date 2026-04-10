@@ -28,33 +28,33 @@ const getAllRecipes = async (query = "pizza") => {
         `;
         });
 
-//         document.getElementById("count-label").textContent = `(${data?.data?.recipes.length} results)`;
-//         recipesGrid.innerHTML = recipesHTML.join("");
+        document.getElementById("count-label").textContent = `(${data?.data?.recipes.length} results)`;
+        recipesGrid.innerHTML = recipesHTML.join("");
 
-//     } catch (error) {
-//         console.log("Error: ", error);
-//         recipesGrid.innerHTML = `<div class="msg"><i class="fas fa-circle-exclamation"></i> Something went wrong.</div>`;
-//     }
-// };
+    } catch (error) {
+        console.log("Error: ", error);
+        recipesGrid.innerHTML = `<div class="msg"><i class="fas fa-circle-exclamation"></i> Something went wrong.</div>`;
+    }
+};
 
-// getAllRecipes("pizza");
+getAllRecipes("pizza");
 
-// // GET SINGLE RECIPE BY ID
-// const getRecipeById = async (id) => {
-//     openModal();
+// GET SINGLE RECIPE BY ID
+const getRecipeById = async (id) => {
+    openModal();
 
-//     try {
-//         const response = await fetch(`${baseURL}/${id}`);
-//         const data = await response.json();
-//         const recipe = data?.data?.recipe;
+    try {
+        const response = await fetch(`${baseURL}/${id}`);
+        const data = await response.json();
+        const recipe = data?.data?.recipe;
 
-//         document.getElementById("modal-img").src = recipe?.image_url;
-//         document.getElementById("modal-title").textContent = recipe?.title;
-//         document.getElementById("modal-source").href = recipe?.source_url || "#";
+        document.getElementById("modal-img").src = recipe?.image_url;
+        document.getElementById("modal-title").textContent = recipe?.title;
+        document.getElementById("modal-source").href = recipe?.source_url || "#";
 
-//         document.getElementById("modal-info").innerHTML = `
-//         <div class="info-pill"><i class="fas fa-clock"></i> ${recipe?.cooking_time} min</div>
-//         <div class="info-pill"><i class="fas fa-user"></i> ${recipe?.servings} servings</div>
-//         <div class="info-pill"><i class="fas fa-store"></i> ${recipe?.publisher}</div>
-//       `;
+        document.getElementById("modal-info").innerHTML = `
+        <div class="info-pill"><i class="fas fa-clock"></i> ${recipe?.cooking_time} min</div>
+        <div class="info-pill"><i class="fas fa-user"></i> ${recipe?.servings} servings</div>
+        <div class="info-pill"><i class="fas fa-store"></i> ${recipe?.publisher}</div>
+      `;
 
