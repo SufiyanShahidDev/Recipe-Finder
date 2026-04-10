@@ -58,3 +58,36 @@ const getRecipeById = async (id) => {
         <div class="info-pill"><i class="fas fa-store"></i> ${recipe?.publisher}</div>
       `;
 
+//         const ingredientsHTML = recipe?.ingredients.map((ingredient) => {
+//             return `
+//           <li>
+//             <i class="fas fa-check-circle"></i>
+//             ${ingredient?.quantity ? +ingredient.quantity.toFixed(2) : ""} ${ingredient?.unit} ${ingredient?.description}
+//           </li>
+//         `;
+//         });
+
+//         document.getElementById("modal-ingredients").innerHTML = ingredientsHTML.join("");
+
+//     } catch (error) {
+//         console.log("Error: ", error);
+//     }
+// };
+
+// // SEARCH HANDLER
+// const searchRecipes = () => {
+//     const query = document.getElementById("search-input").value.trim();
+//     if (query) getAllRecipes(query);
+// };
+
+// document.getElementById("search-input").addEventListener("keydown", (e) => {
+//     if (e.key === "Enter") searchRecipes();
+// });
+
+// // MODAL OPEN / CLOSE
+// const openModal = () => document.getElementById("modal").classList.add("open");
+// const closeModal = () => document.getElementById("modal").classList.remove("open");
+
+// document.getElementById("modal").addEventListener("click", (e) => {
+//     if (e.target === document.getElementById("modal")) closeModal();
+// });
