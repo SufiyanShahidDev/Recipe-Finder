@@ -1,0 +1,21 @@
+/* :root {
+    --cream: #fdf6ee;
+    --rust: #c0533a;
+    --rust-light: #e8705a;
+    --dark: #1a1208;
+    --gray: #9e9789;
+    --border: #ecdfd3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+}
+ */
