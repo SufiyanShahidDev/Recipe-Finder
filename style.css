@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
 }
-/* 
+
 body {
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
@@ -78,4 +78,4 @@ header {
 
 .search-bar button:hover {
     background: var(--rust-light);
-} */
+}
