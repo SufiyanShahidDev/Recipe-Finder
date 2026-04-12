@@ -30,6 +30,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 99;
+    justify-content: space-between;
 }
 
 .logo {
@@ -55,14 +56,14 @@ header {
     padding: 11px 20px;
     border: none;
     border-radius: 50px;
-    background: rgba(255, 255, 255, .12);
+    background: var(--gray);
     color: #fff;
     font-size: .95rem;
     outline: none;
 }
 
 .search-bar input::placeholder {
-    color: rgba(255, 255, 255, .4);
+    color: var(--cream);
 }
 
 .search-bar button {
