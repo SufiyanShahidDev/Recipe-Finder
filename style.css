@@ -193,7 +193,7 @@ h2 span {
 }
 
 /* MODAL */
-/* #modal {
+#modal {
     display: none;
     position: fixed;
     inset: 0;
@@ -351,4 +351,4 @@ h2 span {
     .modal-ingredients ul {
         grid-template-columns: 1fr;
     }
-} */
+}
