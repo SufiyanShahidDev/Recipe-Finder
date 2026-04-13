@@ -99,7 +99,11 @@ h2 span {
     font-weight: 400;
     margin-left: 8px;
 }
-
+/* 
+.sub-heading{
+    display: flex;
+    justify-content: space-between;
+} */
 
 #recipes-grid {
     display: grid;
