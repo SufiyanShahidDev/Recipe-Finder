@@ -100,6 +100,7 @@ h2 span {
     margin-left: 8px;
 }
 
+
 #recipes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
