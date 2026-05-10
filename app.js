@@ -1,4 +1,4 @@
-// BASE URL ──
+
 const baseURL = "https://forkify-api.jonas.io/api/v2/recipes";
 
 // GET ALL RECIPES
