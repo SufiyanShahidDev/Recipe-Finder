@@ -83,7 +83,7 @@ document.getElementById("search-input").addEventListener("keydown", (e) => {
     if (e.key === "Enter") searchRecipes();
 });
 
-// MODAL OPEN / CLOSE
+// MODAL OPEN OR CLOSE
 const openModal = () => document.getElementById("modal").classList.add("open");
 const closeModal = () => document.getElementById("modal").classList.remove("open");
 
