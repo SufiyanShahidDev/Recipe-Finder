@@ -1,7 +1,7 @@
 // BASE URL ──
 const baseURL = "https://forkify-api.jonas.io/api/v2/recipes";
 
-// GET ALL RECIPES (search query)
+// GET ALL RECIPES
 const getAllRecipes = async (query = "pizza") => {
     const recipesGrid = document.getElementById("recipes-grid");
     recipesGrid.innerHTML = `<div class="msg"><i class="fas fa-spinner fa-spin"></i> Loading...</div>`;
