@@ -39,7 +39,6 @@ const getAllRecipes = async (query = "pizza") => {
 
 getAllRecipes("pizza");
 
-// GET SINGLE RECIPE BY ID
 const getRecipeById = async (id) => {
     openModal();
 
