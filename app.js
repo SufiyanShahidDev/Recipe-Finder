@@ -91,3 +91,4 @@ const closeModal = () => document.getElementById("modal").classList.remove("open
 document.getElementById("modal").addEventListener("click", (e) => {
   if (e.target === document.getElementById("modal")) closeModal();
 });
+
