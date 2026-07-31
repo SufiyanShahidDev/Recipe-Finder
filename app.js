@@ -3,16 +3,17 @@ const baseURL = "https://forkify-api.jonas.io/api/v2/recipes";
 
 // GET ALL RECIPES
 const getAllRecipes = async (query = "pizza") => {
-    const recipesGrid = document.getElementById("recipes-grid");
-    recipesGrid.innerHTML = `<div class="msg"><i class="fas fa-spinner fa-spin"></i> Loading...</div>`;
-    document.getElementById("count-label").textContent = "";
+  const recipesGrid = document.getElementById("recipes-grid");
+  recipesGrid.innerHTML = `<div class="msg"><i class="fas fa-spinner fa-spin"></i> Loading...</div>`;
+  document.getElementById("count-label").textContent = "";
 
-    try {
-        const response = await fetch(`${baseURL}?search=${query}`);
-        const data = await response.json();
+  try {
+    const response = await fetch(`${baseURL}?search=${query}`);
+    const data = await response.json();
+    console.log(data);
 
-        const recipesHTML = data?.data?.recipes.map((recipe) => {
-            return `
+    const recipesHTML = data?.data?.recipes.map((recipe) => {
+      return `
           <div class="recipe-card" onclick="getRecipeById('${recipe?.id}')">
             <img src="${recipe?.image_url}" alt="${recipe?.title}"
                  onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400'" />
@@ -26,61 +27,61 @@ const getAllRecipes = async (query = "pizza") => {
             </div>
           </div>
         `;
-        });
+    });
 
-        document.getElementById("count-label").textContent = `(${data?.data?.recipes.length} results)`;
-        recipesGrid.innerHTML = recipesHTML.join("");
+    document.getElementById("count-label").textContent = `(${data?.data?.recipes.length} results)`;
+    recipesGrid.innerHTML = recipesHTML.join("");
 
-    } catch (error) {
-        console.log("Error: ", error);
-        recipesGrid.innerHTML = `<div class="msg"><i class="fas fa-circle-exclamation"></i> Something went wrong.</div>`;
-    }
+  } catch (error) {
+    console.log("Error: ", error);
+    recipesGrid.innerHTML = `<div class="msg"><i class="fas fa-circle-exclamation"></i> Something went wrong.</div>`;
+  }
 };
 
 getAllRecipes("pizza");
 
 const getRecipeById = async (id) => {
-    openModal();
+  openModal();
 
-    try {
-        const response = await fetch(`${baseURL}/${id}`);
-        const data = await response.json();
-        const recipe = data?.data?.recipe;
+  try {
+    const response = await fetch(`${baseURL}/${id}`);
+    const data = await response.json();
+    const recipe = data?.data?.recipe;
 
-        document.getElementById("modal-img").src = recipe?.image_url;
-        document.getElementById("modal-title").textContent = recipe?.title;
-        document.getElementById("modal-source").href = recipe?.source_url || "#";
+    document.getElementById("modal-img").src = recipe?.image_url;
+    document.getElementById("modal-title").textContent = recipe?.title;
+    document.getElementById("modal-source").href = recipe?.source_url || "#";
 
-        document.getElementById("modal-info").innerHTML = `
+    document.getElementById("modal-info").innerHTML = `
         <div class="info-pill"><i class="fas fa-clock"></i> ${recipe?.cooking_time} min</div>
         <div class="info-pill"><i class="fas fa-user"></i> ${recipe?.servings} servings</div>
         <div class="info-pill"><i class="fas fa-store"></i> ${recipe?.publisher}</div>
       `;
 
-        const ingredientsHTML = recipe?.ingredients.map((ingredient) => {
-            return `
+    const ingredientsHTML = recipe?.ingredients.map((ingredient) => {
+      return `
           <li>
             <i class="fas fa-check-circle"></i>
             ${ingredient?.quantity ? +ingredient.quantity.toFixed(2) : ""} ${ingredient?.unit} ${ingredient?.description}
           </li>
         `;
-        });
+    });
 
-        document.getElementById("modal-ingredients").innerHTML = ingredientsHTML.join("");
+    document.getElementById("modal-ingredients").innerHTML = ingredientsHTML.join("");
 
-    } catch (error) {
-        console.log("Error: ", error);
-    }
+  } catch (error) {
+    console.log("Error: ", error);
+  }
 };
 
 // SEARCH HANDLER
 const searchRecipes = () => {
-    const query = document.getElementById("search-input").value.trim();
-    if (query) getAllRecipes(query);
+  const query = document.getElementById("search-input").value.trim();
+  if (query) getAllRecipes(query);
 };
 
 document.getElementById("search-input").addEventListener("keydown", (e) => {
-    if (e.key === "Enter") searchRecipes();
+  if (e.key === "Enter") searchRecipes();
 });
 
 // MODAL OPEN OR CLOSE
@@ -88,5 +89,5 @@ const openModal = () => document.getElementById("modal").classList.add("open");
 const closeModal = () => document.getElementById("modal").classList.remove("open");
 
 document.getElementById("modal").addEventListener("click", (e) => {
-    if (e.target === document.getElementById("modal")) closeModal();
+  if (e.target === document.getElementById("modal")) closeModal();
 });
